@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tous les biens - Olena Pampukha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="dorsia-shared.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="olena-pampukha-dorsia.html">
+        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M6 16.5 16 8l10 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 15.5V26h12V15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M14 26v-6h4v6" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        Olena Pampukha
+      </a>
+      <ul class="nav-links">
+        <li><a href="biens-dorsia.html">Biens</a></li>
+        <li><a href="olena-pampukha-dorsia.html#apropos">À propos</a></li>
+        <li><a href="blog-dorsia.html">Blog</a></li>
+        <li><a href="olena-pampukha-dorsia.html#contact">Contact</a></li>
+      </ul>
+      <a class="nav-contact" href="olena-pampukha-dorsia.html#contact">Écrire</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <div class="kicker">
+          <svg class="mini-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M5 17 16 8l11 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 16v11h14V16" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M13 27v-7h6v7" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          Catalogue immobilier
+        </div>
+        <h1>Tous les biens.</h1>
+        <p>
+          Les biens disponibles à l'achat ou à la location à Carcassonne et dans
+          l'Aude. Les informations essentielles sont visibles ici, sans détour.
+        </p>
+        <a class="back-link" href="olena-pampukha-dorsia.html">Retour à l'accueil</a>
+      </div>
+      <div class="hero-count">
+        <strong>10</strong>
+        <span>annonces à consulter</span>
+      </div>
+    </section>
+
+    <section class="catalogue">
+      <div class="section-marker">
+        <span>
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M8 24h16M10 24V11l6-4 6 4v13M13 24v-7h6v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Biens disponibles
+        </span>
+      </div>
+      <div class="catalog-grid" id="catalogGrid"></div>
+    </section>
+
+    <section class="contact-strip">
+      <strong>Une fiche vous parle ?</strong>
+      <div>
+        <a href="tel:+33612345678">+33 6 12 34 56 78</a>
+        <a href="mailto:olena@immobilier-aude.fr">olena@immobilier-aude.fr</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Olena Pampukha · RE/MAX Accès Immobilier</span>
+      <span><a href="olena-pampukha-dorsia.html">Accueil</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const biens = [
+      {
+        ref: "1101526467",
+        title: "Villa 4 faces avec jardin",
+        city: "Peyriac Minervois",
+        price: "313 000 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/5b1258de-818b-5525-b6fe-d42089db8176.jpg?v=20260421215035",
+        surface: "178 m²",
+        pieces: "6 pièces",
+        bedrooms: "5 chambres",
+        lead: "Villa de type 6 avec jardin, hangar et logement indépendant à rénover. Une maison familiale lumineuse, proche des commodités.",
+        copy: [
+          "Villa 4 faces comprenant un hall d'entrée, 5 chambres dont 2 en rez-de-chaussée, une cuisine aménagée et équipée, un séjour avec cheminée, une salle de bain, une salle d'eau, 2 WC et 2 greniers en partie aménageables.",
+          "Le bien comprend aussi un hangar non attenant à usage de garage et un logement indépendant de type 2 à rénover. L'ensemble est construit sur une parcelle de presque 3000 m² clôturée, arborée et piscinable."
+        ]
+      },
+      {
+        ref: "1101523466",
+        title: "Maison en pierre à rénover",
+        city: "Laure Minervois",
+        price: "59 000 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/d313b23e-560c-59fc-9ad5-f4f075077254.jpg?v=20250119054402",
+        surface: "83 m²",
+        pieces: "4 pièces",
+        bedrooms: "3 chambres",
+        lead: "Maison de village deux faces avec jardinet et grenier aménageable. Le bien est habitable en l'état, avec une modernisation à prévoir.",
+        copy: [
+          "Maison de village deux faces en pierre comprenant une cuisine, 3 chambres, une salle d'eau et un grenier aménageable pouvant accueillir des chambres supplémentaires.",
+          "Le tout est complété par un jardinet. Une base intéressante pour un projet de résidence principale, secondaire ou investissement."
+        ]
+      },
+      {
+        ref: "1101525324",
+        title: "Maison de maître rénovée",
+        city: "Quillan",
+        price: "498 000 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/8fca2134-dbe4-534b-a701-b74cc8b28f89.jpg?v=20260130051340",
+        surface: "392 m²",
+        pieces: "7 pièces",
+        bedrooms: "6 chambres",
+        lead: "Maison de maître entièrement rénovée avec goût, cour intérieure, combles semi-aménagés et terrasse tropézienne.",
+        copy: [
+          "Le bien comprend des suites parentales, plusieurs salons, une cuisine équipée, un bureau, une chaufferie, une cour intérieure et des volumes généreux.",
+          "La terrasse tropézienne indépendante offre une vue sur les montagnes. Un bien rare, adapté à une grande famille, une maison d'hôtes ou une résidence secondaire de standing."
+        ]
+      },
+      {
+        ref: "1101526004",
+        title: "Pavillon avec piscine",
+        city: "Trèbes",
+        price: "1 050 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/a6d7071c-da13-5e8a-ac69-0a0b9755e7ba.jpg?v=20260423041036",
+        surface: "Location",
+        pieces: "4 pièces",
+        bedrooms: "3 chambres",
+        lead: "Pavillon totalement rénové avec séjour, cuisine équipée, dressing, double vitrage et piscine avec plages en bois.",
+        copy: [
+          "Le logement comprend un espace de vie ouvert, une salle de bains avec douche, 2 WC, des menuiseries PVC double vitrage et des volets roulants électriques solaires.",
+          "Piscine 4 m x 3 m avec plages en bois. Libre de suite, avec loyer de 1 050 €, charges de 20 € par mois et dépôt de garantie de 1 030 €."
+        ]
+      },
+      {
+        ref: "1101526260",
+        title: "Pavillon avec garage",
+        city: "Trèbes",
+        price: "139 500 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/ae0c8ee9-cc24-5e43-867e-5f8848c37411.jpg?v=20260214050837",
+        surface: "85 m²",
+        pieces: "4 pièces",
+        bedrooms: "3 chambres",
+        lead: "Maison avec séjour cheminée, cuisine, salle d'eau, buanderie et garage sur parcelle clôturée et arborée.",
+        copy: [
+          "Le pavillon propose une entrée, un séjour avec cheminée et insert, une cuisine, une salle d'eau, un WC séparé, une buanderie et un garage.",
+          "La parcelle de 360 m² est clôturée, arborée et piscinable, proche de toutes commodités. Idéal jeune couple ou investissement locatif."
+        ]
+      },
+      {
+        ref: "1101526064",
+        title: "Hangar avec logement",
+        city: "Puichéric",
+        price: "204 000 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/1a1776d1-588d-5c83-bf3b-bf911a1a03a7.jpg?v=20260415214724",
+        surface: "104 m²",
+        pieces: "4 pièces",
+        bedrooms: "3 chambres",
+        lead: "Ensemble immobilier avec grand hangar lumineux, logement de type 4 à l'étage, véranda, terrasse et garage.",
+        copy: [
+          "Le hangar de plus de 340 m² comprend hauteur sous plafond, fosse de vidange, pont élévateur, bureau et portails automatiques.",
+          "Le logement comprend 3 chambres, séjour, cuisine séparée, véranda, terrasse et garage. Une rénovation complète est à prévoir."
+        ]
+      },
+      {
+        ref: "1101525568",
+        title: "Pavillon rénové",
+        city: "Trèbes",
+        price: "179 000 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/6f3e2039-f12d-57c2-bb0a-a03090186e75.jpg?v=20250802040002",
+        surface: "113 m²",
+        pieces: "5 pièces",
+        bedrooms: "4 chambres",
+        lead: "Maison rénovée avec cuisine ouverte, véranda, climatisation réversible, garage, cave, puits et jardin.",
+        copy: [
+          "La maison a été rénovée en 2017 et comprend une cuisine équipée ouverte sur séjour, une véranda, 2 WC séparés, une salle d'eau et la climatisation réversible.",
+          "Le bien comprend aussi un garage, une cave et un puits, sur une parcelle de 469 m² clôturée, arborée et piscinable. Aucun travaux à prévoir."
+        ]
+      },
+      {
+        ref: "1101516680",
+        title: "Pavillon de plain-pied",
+        city: "Trèbes",
+        price: "179 500 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/cc5dc762-789f-5dfc-8083-3706a8532106.jpg?v=20260314051319",
+        surface: "111 m²",
+        pieces: "5 pièces",
+        bedrooms: "4 chambres",
+        lead: "Maison de plain-pied avec garage, dépendances et potentiel d'aménagement indépendant.",
+        copy: [
+          "La maison comprend 3 chambres en rez-de-chaussée, une chambre en mezzanine, une cuisine équipée, une salle d'eau, un garage et des dépendances.",
+          "Les dépendances peuvent être converties en studio. Parcelle de 549 m² clôturée, arborée et piscinable, proche de toutes commodités."
+        ]
+      },
+      {
+        ref: "1101525650",
+        title: "Villa à rénover",
+        city: "Carcassonne",
+        price: "149 000 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/556d27de-6348-5499-8a40-39eacb72ff01.jpg?v=20251129051929",
+        surface: "245 m²",
+        pieces: "7 pièces",
+        bedrooms: "6 chambres",
+        lead: "Grande villa avec beaux volumes, pièces sous combles, jardin arboré et fort potentiel après travaux.",
+        copy: [
+          "La villa comprend un hall d'entrée, une grande cuisine salle à manger, une arrière-cuisine, un séjour, des salles d'eau et plusieurs pièces sous combles.",
+          "Des travaux importants sont à prévoir pour obtenir une villa de plus de 220 m² habitables sur un terrain arboré et piscinable de 3479 m²."
+        ]
+      },
+      {
+        ref: "1101525661",
+        title: "Bâtisse en pierre rénovée",
+        city: "Marseillette",
+        price: "260 000 €",
+        image: "https://app.skysignage.com/cdn/content/adaptimmo/images/43d1ed7d-7abb-5cbe-8b30-2ad65fd37f64.jpg?v=20250911035850",
+        surface: "200 m²",
+        pieces: "5 pièces",
+        bedrooms: "4 chambres",
+        lead: "Bâtisse de caractère rénovée avec grands séjours, garages, piscine à l'étage, cuisine d'été et vues ouvertes.",
+        copy: [
+          "La bâtisse en pierre rénovée comprend 4 chambres, 3 salles d'eau, 4 WC, deux grands séjours, une cuisine ouverte équipée, une buanderie, une chaufferie et deux garages.",
+          "Piscine à l'étage, cuisine d'été, parcelle de 734 m² et vue sur les vignes, la Montagne Noire et les Corbières."
+        ]
+      }
+    ];
+
+    const grid = document.getElementById("catalogGrid");
+    grid.innerHTML = biens.map((bien) => `
+      <article class="catalog-card" id="ref-${bien.ref}">
+        <img src="${bien.image}" alt="${bien.title} à ${bien.city}"/>
+        <div class="label">${bien.city} · ${bien.price}</div>
+        <h2>${bien.title}</h2>
+        <p class="catalog-intro">${bien.lead}</p>
+        <div class="catalog-stats">
+          <span>${bien.surface}</span>
+          <span>${bien.pieces}</span>
+          <span>${bien.bedrooms}</span>
+          <span>Réf. ${bien.ref}</span>
+        </div>
+        <div class="catalog-detail-label">Voir le détail</div>
+        <div class="catalog-facts">
+          <span><small>Prix</small><strong>${bien.price}</strong></span>
+          <span><small>Surface</small><strong>${bien.surface}</strong></span>
+          <span><small>Pièces</small><strong>${bien.pieces}</strong></span>
+          <span><small>Chambres</small><strong>${bien.bedrooms}</strong></span>
+        </div>
+        <div class="catalog-copy">
+          ${bien.copy.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+        </div>
+      </article>
+    `).join("");
+  </script>
+</body>
+</html>
