@@ -23,6 +23,7 @@ body {
   font-size: 17px;
   line-height: 1.62;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 img { display: block; max-width: 100%; }
@@ -240,11 +241,23 @@ h1 {
   font-size: .86rem;
   font-weight: 800;
   letter-spacing: .04em;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.button:hover {
+  background: var(--graphite);
+  color: var(--paper);
+  transform: translateY(-2px);
 }
 
 .button.primary {
   color: var(--paper);
   background: var(--graphite);
+}
+
+.button.primary:hover {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
 }
 
 .hero-art {
@@ -846,6 +859,124 @@ footer {
   .post-small { grid-template-columns: 120px minmax(0, 1fr); }
 }
 
+@media (max-width: 760px) {
+  .site-header {
+    position: sticky;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .nav {
+    width: min(100% - 28px, 1180px);
+    gap: 10px 18px;
+  }
+
+  .nav-contact {
+    display: none;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    gap: 18px;
+    margin-inline: -2px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero,
+  .section,
+  .page-hero,
+  .about-inner,
+  .catalogue,
+  .contact-strip,
+  .footer-inner {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .hero {
+    padding: 38px 0 54px;
+  }
+
+  .hero-layout {
+    gap: 30px;
+  }
+
+  .hero-art {
+    margin-inline: -10px;
+  }
+
+  .hero-art svg {
+    min-height: 220px;
+  }
+
+  .section,
+  .about-inner {
+    padding: 58px 0;
+  }
+
+  .page-hero {
+    padding: 46px 0 44px;
+  }
+
+  .section-title,
+  .contact h2 {
+    font-size: clamp(2.08rem, 11vw, 3.3rem);
+  }
+
+  .hero-copy,
+  .page-hero p,
+  .contact p,
+  .about-copy p {
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .home-card,
+  .catalog-card,
+  .post-large,
+  .post-small {
+    padding-top: 16px;
+  }
+
+  .home-card::after,
+  .catalog-card::after,
+  .post-large::after,
+  .post-small::after {
+    width: 24px;
+  }
+
+  .home-card img,
+  .catalog-card img,
+  .post-large img,
+  .post-page-card img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .catalog-stats {
+    gap: 8px 12px;
+  }
+
+  .catalog-stats span {
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
 @media (max-width: 620px) {
   body { font-size: 16px; }
   .nav,
@@ -864,7 +995,24 @@ footer {
     font-size: .92rem;
   }
 
-  h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
+  h1 {
+    font-size: clamp(2.85rem, 15vw, 4.15rem);
+    line-height: .94;
+  }
+
+  .kicker,
+  .section-marker span {
+    font-size: .9rem;
+    letter-spacing: .055em;
+  }
+
+  .kicker .mini-icon,
+  .mini-icon,
+  .section-marker svg {
+    width: 21px;
+    height: 21px;
+  }
+
   .hero-copy { font-size: 1rem; }
   .hero-meta,
   .mini-facts,
@@ -874,16 +1022,92 @@ footer {
 
   .section-marker {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
   }
 
   .section-marker::after { display: none; }
-  .section-marker span { font-size: 1rem; }
+
+  .section-marker::before {
+    width: 100%;
+  }
+
+  .section-head {
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .home-property-grid,
+  .catalog-grid,
+  .post-list {
+    gap: 38px;
+  }
+
+  .property-title,
+  .catalog-card h2 {
+    font-size: clamp(1.34rem, 7vw, 2rem);
+  }
+
+  .label {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    align-items: center;
+    line-height: 1.35;
+  }
+
   .post-small { grid-template-columns: 1fr; }
   .post-small img { aspect-ratio: 16 / 10; }
+
+  .contact-panel {
+    gap: 24px;
+  }
+
   .contact-list a {
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 5px;
+    padding: 14px 0;
   }
+
+  .footer-inner {
+    min-height: 92px;
+    display: grid;
+    align-content: center;
+  }
+
   .contact-strip { display: grid; }
+}
+
+@media (max-width: 420px) {
+  .nav,
+  .section,
+  .hero,
+  .about-inner,
+  .page-hero,
+  .catalogue,
+  .contact-strip,
+  .footer-inner {
+    width: min(100% - 22px, 1180px);
+  }
+
+  .brand {
+    font-size: .96rem;
+  }
+
+  .nav-links {
+    font-size: .86rem;
+  }
+
+  h1 {
+    font-size: clamp(2.55rem, 14vw, 3.6rem);
+  }
+
+  .hero-meta span,
+  .mini-facts span,
+  .catalog-facts span {
+    min-height: auto;
+  }
+
+  .catalog-detail-label,
+  .detail-link {
+    font-size: .74rem;
+  }
 }
